@@ -10,25 +10,13 @@ import java.time.LocalDateTime
 @Entity
 class CourseModel (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long?,
-    private val registrationNumber: String,
-    private val courseNumber: String,
-    private val courseName: String,
-    private val courseCategory: String,
-    private val requisite: String,
-    private val teacherName: String,
-    private val coursePeriod: String,
-    private val registrationDate: LocalDateTime = LocalDateTime.now(),
+     val id: Long?,
+     val registrationNumber: String,
+     val courseNumber: String,
+     val courseName: String,
+     val courseCategory: String,
+     val requisite: String,
+     val teacherName: String,
+     val coursePeriod: String,
+     val registrationDate: LocalDateTime = LocalDateTime.now()
 )
-{
-    fun toCourse() = Course(
-            id = this.id,
-            registrationNumber = this.registrationNumber,
-            courseNumber = this.courseNumber,
-            teacherName = this.teacherName,
-            coursePeriod = this.coursePeriod,
-            courseCategory = this.courseCategory,
-            courseName = this.courseName,
-            requisite = this.requisite
-    )
-}

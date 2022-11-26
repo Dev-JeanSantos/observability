@@ -12,13 +12,15 @@ import org.springframework.transaction.annotation.Transactional
 @Component
 class CourseRepositoryService(
     private val repository: CourseRepository
-): CourseRepositorioPorta {
+) : CourseRepositorioPorta {
 
     private val logger = LoggerFactory.getLogger(javaClass)
 
     @Transactional
     override fun saveCourse(course: Course): Course {
-        logger.info("[GameRepository][save] Iniciando salvamento course no H2. Nome do Curso: ${course.courseName}")
-        return repository.save(course.toEntity()).toDomain()
+        logger.info("[GameRepository][save] Iniciando salvamento course no H2. Codigo do Curso: ${course.registrationNumber}")
+        return repository.save(course.toEntity()).toDomain().also {
+            logger.info("[GameRepository][save] Finalizando salvamento course no H2. Codigo do Curso: ${course.registrationNumber}")
+        }
     }
 }

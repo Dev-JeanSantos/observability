@@ -1,6 +1,7 @@
 package br.com.devjs.aplication.cursos.application.services
 
 import br.com.devjs.aplication.cursos.application.domains.Course
+import br.com.devjs.aplication.cursos.application.exceptions.ResourcesNotFoundException
 import br.com.devjs.aplication.cursos.application.ports.input.CourseUseCase
 import br.com.devjs.aplication.cursos.application.ports.output.CourseRepositorioPorta
 import br.com.devjs.aplication.cursos.exceptions.CourseExecption
@@ -23,7 +24,7 @@ class CourseService(
             }
         } catch (e: Exception) {
             logger.error("Falha no novo registro!")
-            throw CourseExecption("Falhou")
+            throw ResourcesNotFoundException("teste")
         }
     }
 }

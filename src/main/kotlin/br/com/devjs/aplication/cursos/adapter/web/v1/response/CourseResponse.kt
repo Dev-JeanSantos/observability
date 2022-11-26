@@ -1,7 +1,15 @@
 package br.com.devjs.aplication.cursos.adapter.web.v1.response
 
+import com.fasterxml.jackson.annotation.JsonProperty
+import java.time.LocalDateTime
+
 data class CourseResponse(
-    private val  name: String,
-    private val  category: String,
-    private val  idCourse: String,
+    @JsonProperty("Nome do Curso")
+    val name: String,
+    @JsonProperty("Categoria")
+    val category: String,
+    @JsonProperty("ID do Curso")
+    val idCourse: String,
+    @JsonProperty("Data de Criação")
+    val dataCreater: LocalDateTime
 )

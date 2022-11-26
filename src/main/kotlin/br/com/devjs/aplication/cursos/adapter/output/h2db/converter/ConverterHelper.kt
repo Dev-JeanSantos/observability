@@ -15,12 +15,13 @@ fun Course.toEntity() = CourseModel(
 )
 
 fun CourseModel.toDomain() = Course(
-        id = this.toCourse().id,
-        registrationNumber = this.toCourse().registrationNumber,
-        courseNumber = this.toCourse().courseNumber,
-        courseName = this.toCourse().courseName,
-        courseCategory = this.toCourse().courseCategory,
-        requisite = this.toCourse().requisite,
-        teacherName = this.toCourse().teacherName,
-        coursePeriod = this.toCourse().coursePeriod
+        id = this.id,
+        registrationNumber = this.registrationNumber,
+        courseNumber = this.courseNumber,
+        courseName = this.courseName,
+        courseCategory = this.courseCategory,
+        requisite = this.requisite,
+        teacherName = this.teacherName,
+        coursePeriod = this.coursePeriod,
+        registrationDate = this.registrationDate
 )

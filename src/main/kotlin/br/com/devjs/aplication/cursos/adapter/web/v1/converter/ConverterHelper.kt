@@ -1,4 +1,4 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.converte
+package br.com.devjs.aplication.cursos.adapter.web.v1.converter
 
 import br.com.devjs.aplication.cursos.adapter.web.v1.requests.CourseRequest
 import br.com.devjs.aplication.cursos.adapter.web.v1.response.CourseResponse
@@ -12,11 +12,13 @@ fun CourseRequest.toDomain() = Course(
         courseCategory = this.courseCategory,
         requisite = this.requisite,
         teacherName = this.teacherName,
-        coursePeriod = this.coursePeriod
+        coursePeriod = this.coursePeriod,
+        registrationDate = this.registrationDate
 )
 
 fun Course.toResponse() = CourseResponse(
         name = this.courseName,
         category = this.courseCategory,
-        idCourse = this.courseNumber
+        idCourse = this.courseNumber,
+        dataCreater = this.registrationDate!!
         )
