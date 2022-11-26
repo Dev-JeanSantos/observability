@@ -23,4 +23,13 @@ class CourseRepositoryService(
             logger.info("[GameRepository][save] Finalizando salvamento course no H2. Codigo do Curso: ${course.registrationNumber}")
         }
     }
+
+    override fun getAllCourses(): List<Course> {
+        logger.info("[GameRepository][getAllCourses] - Inicializando busca por todos os Cursos")
+        return repository.findAll().map { it.toDomain() }.also {
+            logger.info("[GameRepository][getAllCourses] - Finalizando busca por todos os Cursos")
+        }
+    }
+
+
 }

@@ -2,6 +2,7 @@ package br.com.devjs.aplication.cursos.adapter.web.v1.controllers
 
 import br.com.devjs.aplication.cursos.adapter.web.v1.api.CourseApi
 import br.com.devjs.aplication.cursos.adapter.web.v1.converter.toDomain
+import br.com.devjs.aplication.cursos.adapter.web.v1.converter.toListResponse
 import br.com.devjs.aplication.cursos.adapter.web.v1.converter.toResponse
 import br.com.devjs.aplication.cursos.adapter.web.v1.requests.CourseRequest
 import br.com.devjs.aplication.cursos.adapter.web.v1.response.CourseResponse
@@ -17,7 +18,6 @@ class CursoController(
     private val courseUseCase: CourseUseCase
 ) : CourseApi {
     private val logger = LoggerFactory.getLogger(javaClass)
-
     override fun saveCourses(courseRequest: CourseRequest): CourseResponse {
         try {
             logger.info("[CourseController][save] - Iniciando salvamento de um novo Curso: ${courseRequest.courseName}")
@@ -28,6 +28,19 @@ class CursoController(
         } catch (e: Exception) {
             throw ResourcesNotFoundException("Os campos não devem ser nulos").also {
                 logger.error("Os campos não devem ser nulos!")
+            }
+        }
+    }
+
+    override fun getAllCourses(): List<CourseResponse> {
+        try {
+            logger.info("[CourseController][getALLCourse] - Iniciando busca por todos os Cursos")
+            return courseUseCase.getAllCourses().toListResponse().also {
+                logger.info("[CourseController][getALLCourse] - Finalizando a busca por todos os Cursos")
+            }
+        }catch (e: Exception){
+            throw ResourcesNotFoundException("Gerou alguma falha").also {
+                logger.error("Gerou alguma falha")
             }
         }
     }

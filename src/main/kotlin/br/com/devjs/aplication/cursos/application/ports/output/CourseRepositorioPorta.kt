@@ -6,4 +6,5 @@ import br.com.devjs.aplication.cursos.application.domains.Course
 interface CourseRepositorioPorta {
 
     fun saveCourse(course: Course): Course
+    fun getAllCourses(): List<Course>
 }

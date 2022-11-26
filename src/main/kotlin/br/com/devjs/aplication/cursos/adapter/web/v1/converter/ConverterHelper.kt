@@ -22,3 +22,9 @@ fun Course.toResponse() = CourseResponse(
         idCourse = this.courseNumber,
         dataCreater = this.registrationDate!!
         )
+
+fun List<Course>.toListResponse(): List<CourseResponse>{
+        return this.map {
+                it.toResponse()
+        }
+}

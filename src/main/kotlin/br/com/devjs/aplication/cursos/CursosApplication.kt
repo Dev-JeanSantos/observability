@@ -1,29 +1,15 @@
 package br.com.devjs.aplication.cursos
 
+import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.autoconfigure.domain.EntityScan
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
-@EnableJpaRepositories(
-        "br.com.devjs.aplication.cursos.*",
-        "br.com.devjs.aplication.cursos.adapter.output.h2db.*"
-)
-@ComponentScan(
-        basePackages = [
-            "br.com.devjs.aplication.cursos.*",
-            "br.com.devjs.aplication.cursos.adapter.output.h2db.*",
-        ]
-)
-@EntityScan(
-        "br.com.devjs.aplication.cursos.*",
-        "br.com.devjs.aplication.cursos.adapter.output.h2db.*"
-)
 class CursosApplication
 
+val logger = LoggerFactory.getLogger(CursosApplication::class.java)
 fun main(args: Array<String>) {
+    logger.info("Subindo a Aplicação")
     runApplication<CursosApplication>(*args)
+    logger.info("API Criar Cursos")
 }
