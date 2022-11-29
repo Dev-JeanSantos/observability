@@ -1,4 +1,4 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.requests
+package br.com.devjs.aplication.cursos.adapter.input.web.v1.requests
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.validation.constraints.NotBlank

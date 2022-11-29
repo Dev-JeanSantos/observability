@@ -1,7 +1,7 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.api
+package br.com.devjs.aplication.cursos.adapter.input.web.v1.api
 
-import br.com.devjs.aplication.cursos.adapter.web.v1.requests.CourseRequest
-import br.com.devjs.aplication.cursos.adapter.web.v1.response.CourseResponse
+import br.com.devjs.aplication.cursos.adapter.input.web.v1.requests.CourseRequest
+import br.com.devjs.aplication.cursos.adapter.input.web.v1.response.CourseResponse
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

@@ -1,4 +1,4 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.response
+package br.com.devjs.aplication.cursos.adapter.input.web.v1.response
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime

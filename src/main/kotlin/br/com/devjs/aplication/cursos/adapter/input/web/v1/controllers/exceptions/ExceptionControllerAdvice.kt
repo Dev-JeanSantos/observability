@@ -1,4 +1,4 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.controllers.exceptions
+package br.com.devjs.aplication.cursos.adapter.input.web.v1.controllers.exceptions
 
 import br.com.devjs.aplication.cursos.application.exceptions.ResourcesNotFoundException
 import org.springframework.http.HttpStatus

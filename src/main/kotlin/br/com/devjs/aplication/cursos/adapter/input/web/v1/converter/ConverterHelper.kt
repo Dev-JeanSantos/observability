@@ -1,7 +1,7 @@
-package br.com.devjs.aplication.cursos.adapter.web.v1.converter
+package br.com.devjs.aplication.cursos.adapter.input.web.v1.converter
 
-import br.com.devjs.aplication.cursos.adapter.web.v1.requests.CourseRequest
-import br.com.devjs.aplication.cursos.adapter.web.v1.response.CourseResponse
+import br.com.devjs.aplication.cursos.adapter.input.web.v1.requests.CourseRequest
+import br.com.devjs.aplication.cursos.adapter.input.web.v1.response.CourseResponse
 import br.com.devjs.aplication.cursos.application.domains.Course
 
 fun CourseRequest.toDomain() = Course(
